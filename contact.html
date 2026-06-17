@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Oluwadarasimi</title>
+  <title>Contact — Oluwadarasimi Olowe</title>
   <link rel="stylesheet" href="style.css"/>
   <script src="theme.js"></script>
 </head>
@@ -51,34 +51,6 @@
     </div>
   </div>
 
-  <div class="card contact-card">
-    <div class="card-header">
-      <div>
-        <div class="section-label">Contact Us</div>
-        <h2>Tell us how we can help.</h2>
-      </div>
-    </div>
-    <form id="contact-form" class="contact-form" action="#" novalidate>
-      <label class="form-field">
-        <span>Full Name *</span>
-        <input type="text" name="name" placeholder="Enter your name" required>
-      </label>
-      <label class="form-field">
-        <span>Email Address *</span>
-        <input type="email" name="email" placeholder="Enter your email" required>
-      </label>
-      <label class="form-field">
-        <span>Profession (optional)</span>
-        <input type="text" name="profession" placeholder="Your role or industry">
-      </label>
-      <label class="form-field form-field-full">
-        <span>Message *</span>
-        <textarea name="message" placeholder="What would you like to discuss?" required></textarea>
-      </label>
-      <button type="submit" class="btn btn-solid">Send Message</button>
-    </form>
-  </div>
-
   <div class="card" style="text-align:center;">
     <p style="font-family:var(--mono); font-size:0.68rem; color:var(--text-dim);
        text-transform:uppercase; letter-spacing:1.2px; margin-bottom:1rem;">
@@ -110,34 +82,6 @@
   const menu = document.getElementById('nav-menu');
   hamburger.addEventListener('click', function() {
     menu.classList.toggle('open');
-  });
-
-  const contactForm = document.getElementById('contact-form');
-  contactForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    if (!contactForm.checkValidity()) {
-      contactForm.reportValidity();
-      return;
-    }
-
-    const formData = new FormData(contactForm);
-    const name = formData.get('name').trim();
-    const email = formData.get('email').trim();
-    const profession = formData.get('profession').trim();
-    const message = formData.get('message').trim();
-
-    const subject = encodeURIComponent('New contact request from website');
-    let body = `Name: ${name}\nEmail: ${email}`;
-
-    if (profession) {
-      body += `\nProfession: ${profession}`;
-    }
-
-    body += `\n\nMessage:\n${message}`;
-
-    const mailtoLink = `mailto:oloweoluwadarasimi@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
   });
 </script>
 </body>
